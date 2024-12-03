@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/game" method="post">
+    <p>
+        <label for="nick">Digite seu nickname</label>
+        <input type="text" id="nick" name="nick">
+    </p>
+    <p>
+        <label for="minas">Quantidade de Minas</label>
+        <input type="text" name="minas" id="minas">
+    </p>
+    <p>
+        <label for="tamanhoY">Altura (Y)</label>
+        <input type="number" name="tamanhoY" id="tamanhoY">
+    </p>
+    <p>
+        <label for="tamanhoX">Largura (X)</label>
+        <input type="number" name="tamanhoX" id="tamanhoX">
+    </p>
+    <button type="submit">Enviar</button>
+</form>
+{% endblock %}
