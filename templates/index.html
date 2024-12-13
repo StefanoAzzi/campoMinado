@@ -1,23 +1,44 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Minado</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
 
-{% block content %}
-<form action="/game" method="post">
-    <p>
-        <label for="nick">Digite seu nickname</label>
-        <input type="text" id="nick" name="nick">
-    </p>
-    <p>
-        <label for="minas">Quantidade de Minas</label>
-        <input type="text" name="minas" id="minas">
-    </p>
-    <p>
-        <label for="tamanhoY">Altura (Y)</label>
-        <input type="number" name="tamanhoY" id="tamanhoY">
-    </p>
-    <p>
-        <label for="tamanhoX">Largura (X)</label>
-        <input type="number" name="tamanhoX" id="tamanhoX">
-    </p>
-    <button type="submit">Enviar</button>
-</form>
-{% endblock %}
+
+    <h1>Campo Minado</h1>
+
+
+    <div class="input-container">
+        <label for="difficulty">Escolha a dificuldade:</label>
+        <select id="difficulty">
+            <option value="easy">Fácil</option>
+            <option value="normal">Normal</option>
+            <option value="hard">Difícil</option>
+            <option value="custom">Personalizado</option>
+        </select>
+    </div>
+
+
+    <div class="input-container" id="custom-settings" style="display: none;">
+        <label for="board-size">Tamanho do Tabuleiro:</label>
+        <input type="number" id="board-size" value="10" min="5" max="20" step="1">
+       
+        <label for="mine-count">Número de Minas:</label>
+        <input type="number" id="mine-count" value="10" min="1" max="100" step="1">
+    </div>
+
+
+    <button id="start-game">Iniciar Jogo</button>
+
+
+    <div id="game-board"></div>
+    <div id="game-status" class="game-over"></div>
+
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
